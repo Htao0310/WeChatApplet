@@ -1,0 +1,8 @@
+<!--pages/synopsis/synopsis.wxml-->
+
+<view class="container">
+  <view>
+    <image src='../../images/box.png'>boxs</image>
+  </view>
+  <view>{{text}}</view>
+</view>

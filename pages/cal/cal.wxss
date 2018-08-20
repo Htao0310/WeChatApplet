@@ -1,0 +1,67 @@
+/* pages/cal/cal.wxss */
+
+page {
+  background: black;
+}
+
+.screen {
+  position: fixed;
+  bottom: 780rpx;
+  word-wrap: break-word;
+  width: 750rpx;
+}
+
+.screen view {
+  color: #fff;
+  font-size: 30px;
+  text-align: right;
+  margin-right: 30rpx;
+}
+
+.buttom {
+  position: fixed;
+  bottom: 0;
+}
+
+.btnGroup {
+  display: flex;
+  flex-direction: row;
+}
+
+.btn-item {
+  width: 189rpx;
+  text-align: center;
+  font-size: 60rpx;
+  line-height: 150rpx;
+  border-radius: 0;
+}
+.ClearAndBack {
+  width: 283rpx;
+  text-align: center;
+}
+
+.zero {
+  width: 377rpx;
+  text-align: center;
+}
+
+icon {
+  position: absolute;
+  left: 55rpx;
+  top: 37rpx;
+}
+
+.white {
+  background: #efefed;
+}
+
+.orange {
+  background: #fc9504;
+}
+
+.gray {
+  background: #cfcfcf;
+}
+.shadow {
+  background: #999;
+}

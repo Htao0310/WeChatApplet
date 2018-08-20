@@ -1,0 +1,21 @@
+<!--index.wxml-->
+<view class="container">
+ 
+<view>
+<image src='../../images/postman2.png'>快递</image>
+<text>查快递</text>
+</view>
+<view>
+<image src='../../images/cal.png'>计算器</image>
+<text>计算器</text>
+</view>
+<view>
+<image src='../../images/weather.png'>weather</image>
+<text>查天气</text>
+</view>
+<view>
+<image src='../../images/making.png'>making</image>
+<text>making</text>
+</view>
+
+</view>

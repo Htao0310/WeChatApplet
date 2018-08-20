@@ -1,0 +1,19 @@
+<!--pages/postman/postman.wxml-->
+<view class="container">
+  <view>
+    <image src='../../images/postman.png'>邮差</image>
+  </view>
+</view>
+<view>
+  <input placeholder="请输入快递单号" bindinput="input" />
+</view>
+<view class='btn'>
+  <button type="primary" bindtap="btnClick"> 查询 </button>
+  <button type="warn" bindtap="btnClickls"> 历史 </button>
+</view>
+
+<view class='result'>
+
+  {{result}}
+
+</view>
