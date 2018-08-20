@@ -30,7 +30,9 @@ Page({
     var this2 = this;
     // 调用查询快递公司的方法
     app.getExpressFirm(Num, function(data) {
+     
       var Firm = data;
+      
       app.getExpressInfo(Firm, Num, function(data) {
         console.log(data);
         this2.setData({
