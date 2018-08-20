@@ -6,9 +6,7 @@
   <view class="btnGroup">
     <button id='{{id1}}' bindtap='clickButton' hover-class='shadow' class="btn-item gray ClearAndBack">清除</button>
     <button id='{{id2}}' bindtap='clickButton' hover-class='shadow' class="btn-item gray ClearAndBack">回退</button>
-    <!-- <button id='{{id3}}' bindtap='clickButton'  hover-class='shadow' class="btn-item gray">
-      <icon type='download' size='35' color='#999'></icon>
-    </button> -->
+    
     <button id='{{id4}}' bindtap='clickButton' hover-class='shadow' class="btn-item orange">÷</button>
   </view>
   <view class="btnGroup">
