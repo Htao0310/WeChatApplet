@@ -11,12 +11,13 @@ Page({
   },
   //事件处理函数
   /**
-   * 
+   * 点击view事件
    */
+
   clickView: function(e) {
     console.log(e);
     var btnValue = e.currentTarget.id;
-    console.log(btnValue);
+    
     if (btnValue == "postman") {
       // 保留当前页面，跳转到应用内的某个页面，使用wx.navigateBack可以返回到原页面。
       wx.navigateTo({

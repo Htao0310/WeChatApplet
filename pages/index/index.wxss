@@ -2,7 +2,6 @@
 .Group {
   display: flex;
   flex-direction: row;
-  
 }
 
 
