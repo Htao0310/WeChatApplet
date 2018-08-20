@@ -1,6 +1,13 @@
 /**index.wxss**/
+.Group {
+  display: flex;
+  flex-direction: row;
+  
+}
+
 
 image {
-   width: 48px;
+  width: 48px;
   height: 48px;
 }
+
