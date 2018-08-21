@@ -1,6 +1,6 @@
 //app.js
 App({
-  onLaunch: function () {
+  onLaunch: function() {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
@@ -33,7 +33,36 @@ App({
       }
     })
   },
+  // 判断快递的公司
+  getExpressFirm: function(num, cb) {
+    wx.request({
+      url: 'https://www.kuaidi100.com/autonumber/autoComNum?resultv2=1&text=' + num,
+
+      success: function(res) {
+      //  console.info(res.data.auto["0"].comCode);
+
+        cb(res.data.auto["0"].comCode);
+
+      }
+    })
+  },
+  //查询快递
+  getExpressInfo: function(eFirm, num, fh) {
+
+    wx.request({
+      url: 'https://www.kuaidi100.com/query?type=' + eFirm + '&postid=' + num,
+      success: function(res) {
+        // debugger;
+        console.log(res);
+        fh(res.data);
+
+      }
+    })
+
+  },
+
   globalData: {
-    userInfo: null
+    userInfo: null,
+
   }
 })
