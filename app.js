@@ -38,7 +38,7 @@ App({
     wx.request({
       url: 'https://www.kuaidi100.com/autonumber/autoComNum?resultv2=1&text=' + num,
       success: function(res) {
-       console.info(res.data.auto["0"].comCode);
+      //  console.info(res.data.auto["0"].comCode);
         cb(res.data.auto["0"].comCode);
 
       }
