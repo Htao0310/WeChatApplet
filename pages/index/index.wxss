@@ -1,7 +1,7 @@
 /**index.wxss**/
 .Group {
   display: flex;
-  flex-direction: row;
+  flex-direction:column;
 }
 
 
