@@ -38,13 +38,21 @@ App({
     wx.request({
       url: 'https://www.kuaidi100.com/autonumber/autoComNum?resultv2=1&text=' + num,
       success: function(res) {
-      //  console.info(res.data.auto["0"].comCode);
-        cb(res.data.auto["0"].comCode);
+        // console.info(res.data.auto=="");
+        /* 判断是否查询到快递信息是否为空，为空时设置回传参数为0*/
+        if (res.data.auto == "") {
+          // 设置回传的参数为0
+          cb(0);
+        } else {
+          // console.info(res.data.auto["0"].comCode);
+          cb(res.data.auto["0"].comCode);
+        }
+
 
       }
     })
   },
-  //查询快递
+  //查询快递信息
   getExpressInfo: function(eFirm, num, fh) {
     wx.request({
       url: 'https://www.kuaidi100.com/query?type=' + eFirm + '&postid=' + num,

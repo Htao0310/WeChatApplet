@@ -7,8 +7,8 @@ Page({
    */
   data: {
     expressNum: null,
-    // expressFirm: null,
     expressInfo: null,
+    msg: ""
 
   },
   /**
@@ -30,21 +30,28 @@ Page({
     var this2 = this;
     // 调用查询快递公司的方法
     app.getExpressFirm(Num, function(data) {
-     
-      var Firm = data;
-      
-      app.getExpressInfo(Firm, Num, function(data) {
-        console.log(data);
+      console.info(data);
+      // 判断传入参数的值,为0时设置msg的值
+      if (data == 0) {
+
         this2.setData({
 
-          expressInfo: data
+          msg: "没有查询到快递信息！！"
         })
-      })
-      this2.setData({
-        expressFirm: data
-      })
+      } else {
+        var Firm = data;
+        // 调用查询快递信息的方法
+        app.getExpressInfo(Firm, Num, function(data) {
+          console.log(data);
+          this2.setData({
+            msg: "",
+            expressInfo: data
+          })
+        })
+
+      }
     });
-    
+
 
     // // 
     // var Firm = this.data.expressFirm;

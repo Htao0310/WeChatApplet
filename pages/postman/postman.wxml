@@ -12,8 +12,9 @@
   <button type="primary" bindtap="btnClick"> 查询 </button>
   <!-- <button type="warn" bindtap="btnClickls"> 历史 </button> -->
 </view>
-
+<view>{{msg}}</view>
 <scroll-view scroll-y="true" wx:for="{{expressInfo.data}}" wx:key="*this">
+
   <ul>
     <li>{{item.time}}</li>
     <li>{{item.context}}</li>
