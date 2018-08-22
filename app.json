@@ -8,9 +8,10 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#00B26A",
     "navigationBarTitleText": "快捷盒子",
     "navigationBarTextStyle": "black"
+    
   },
   "tabBar": {
     "position": "bottom",
@@ -20,18 +21,13 @@
         "text": "首页",
         "iconPath": "images/home.png",
         "selectedIconPath": "images/home_d.png"
+        
       },
       {
         "pagePath": "pages/synopsis/synopsis",
         "text": "关于",
         "iconPath": "images/synopsis.png",
         "selectedIconPath": "images/synopsis_d.png"
-      },
-      {
-        "pagePath": "pages/logs/logs",
-        "text": "日志",
-        "iconPath": "images/home.png",
-        "selectedIconPath": "images/home_d.png"
       }
     ]
   }
