@@ -30,23 +30,31 @@ Page({
     var this2 = this;
     // 调用查询快递公司的方法
     app.getExpressFirm(Num, function(data) {
-      console.info(data);
+      // console.info(data);
       // 判断传入参数的值,为0时设置msg的值
       if (data == 0) {
 
         this2.setData({
 
-          msg: "没有查询到快递信息！！"
+          msg: "未查询到快递公司信息，请核对快递单号！！",
+          expressInfo:null
         })
       } else {
         var Firm = data;
         // 调用查询快递信息的方法
         app.getExpressInfo(Firm, Num, function(data) {
-          console.log(data);
+          // console.log(data);
+          if(data==0){
+            this2.setData({
+              msg: "抱歉，你的单号暂无物流记录！！",
+              expressInfo: null
+            })
+          }if(data==1){
           this2.setData({
             msg: "",
             expressInfo: data
           })
+          }
         })
 
       }

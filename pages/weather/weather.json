@@ -1,0 +1,6 @@
+{
+  "backgroundTextStyle": "dark",
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTitleText": "今天天气",
+  "enablePullDownRefresh": true
+}

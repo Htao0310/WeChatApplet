@@ -1,0 +1,12 @@
+<!--pages/weather/weather.wxml-->
+<view class='weather-wrapper'>
+  <view class='temp'>{{nowTemp}}</view>
+  <view class='weather'>{{nowWeather}}</view>
+  <image class='weather-bg' src='/images/images-weather/sunny-bg.png' mode="scaleToFill"></image>
+</view>
+<view class="timetips">
+  <image class="timetips-icon" src="/images/images-weather/time-icon.png"></image>
+  <view class="timetips-text">未来24小时天气预测</view>
+</view>
+<view wx:for="{{[1,2,3,4,5]}}">
+{{item}}</view>

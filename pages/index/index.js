@@ -15,7 +15,7 @@ Page({
    */
 
   clickView: function(e) {
-    console.log(e);
+    // console.log(e);
     var btnValue = e.currentTarget.id;
     
     if (btnValue == "postman") {

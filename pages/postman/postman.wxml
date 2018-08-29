@@ -1,23 +1,32 @@
 <!--pages/postman/postman.wxml-->
 
-<view class="container">
+<view>
+  <view class='container'>
+    <image src='../../images/images-postman/postman.png'>邮差</image>
+  </view>
+
   <view>
-    <image src='../../images/postman.png'>邮差</image>
+    <input placeholder="请输入快递单号" bindinput="input" />
+  </view>
+  <view class='btn'>
+    <button type="primary" bindtap="btnClick"> 查询 </button>
+    <!-- <button type="warn" bindtap="btnClickls"> 历史 </button> -->
   </view>
 </view>
-<view>
-  <input placeholder="请输入快递单号" bindinput="input" />
-</view>
-<view class='btn'>
-  <button type="primary" bindtap="btnClick"> 查询 </button>
-  <!-- <button type="warn" bindtap="btnClickls"> 历史 </button> -->
-</view>
 <view>{{msg}}</view>
-<scroll-view scroll-y="true" wx:for="{{expressInfo.data}}" wx:key="*this">
+<scroll-view scroll-y style="height: 270px;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
 
-  <ul>
-    <li>{{item.time}}</li>
-    <li>{{item.context}}</li>
-    
-  </ul>
+  <view wx:for="{{expressInfo.data}}">
+    <ul>
+      <li>【{{item.time}}】</li>
+      <li>---</li>
+      <li>{{item.context}}</li>
+
+    </ul>
+  </view>
+
 </scroll-view>
+
+<view class='kuaidi100'>
+  *数据来源于快递100
+</view>

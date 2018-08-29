@@ -3,6 +3,7 @@
     "pages/index/index",
     "pages/cal/cal",
     "pages/postman/postman",
+    "pages/weather/weather",
     "pages/logs/logs",
     "pages/synopsis/synopsis"
   ],

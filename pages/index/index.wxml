@@ -2,23 +2,20 @@
 <view class='container'>
   <view class='Group'>
     <view bindtap='clickView' id='{{id1}}'>
-      <image src='../../images/postman2.png'>快递</image>
+      <image src='/images/images-postman/postman2.png'>快递</image>
       <text>查快递</text>
     </view>
     <view bindtap='clickView' id='{{id2}}'>
-      <image src='../../images/cal.png'>计算器</image>
+      <image src='/images/cal.png'>计算器</image>
       <text>计算器</text>
     </view>
   
   
     <view bindtap='clickView' id='{{id3}}'>
-      <image src='../../images/weather.png'>weather</image>
-      <text>查天气</text>
+      <image src='/images/images-weather/weather.png'>weather</image>
+      <text>查天气（还未完成...）</text>
     </view>
-    <view bindtap='clickView' id='{{id4}}'>
-      <image src='../../images/making.png'>making</image>
-      <text>making</text>
-    </view>
+    
   </view>
 
 </view>
