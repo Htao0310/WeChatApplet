@@ -38,13 +38,12 @@ App({
     wx.request({
       url: 'https://www.kuaidi100.com/autonumber/autoComNum?resultv2=1&text=' + num,
       success: function(res) {
-        console.info(res);
+        // console.info(res);
         /* 判断是否查询到快递信息是否为空，为空时设置回传参数为0*/
         if (res.data.auto == "") {
           // 设置回传的参数为0
           cb(0);
         } else {
-
           cb(res.data.auto[0].comCode);
         }
       }
@@ -55,11 +54,12 @@ App({
     wx.request({
       url: 'https://www.kuaidi100.com/query?type=' + eFirm + '&postid=' + num,
       success: function(res) {
-        // debugger;
-        console.info(res);
-        if (res.data.ischeck == 0) { //当查询快递是没有查询到 message: "快递公司参数异常：单号不存在或者已经过期"时，ischeck的值是0
+
+        /* console.info(res);
+        console.info(res.data.message) */
+        if (res.data.message == "快递公司参数异常：单号不存在或者已经过期") { //当查询快递是没有查询到 message: "快递公司参数异常：单号不存在或者已经过期"时，ischeck的值是0
           fh(0);
-        } else if (res.data.ischeck == 1) { //当查询到时，ischeck的值为1
+        } else if (res.data.message == "ok") { //当查询到时，ischeck的值为1
 
           fh(res.data);
         }

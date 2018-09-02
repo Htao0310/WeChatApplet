@@ -14,9 +14,9 @@
   </view>
 </view>
 <view>{{msg}}</view>
-<scroll-view scroll-y style="height: 270px;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+<scroll-view scroll-y style="height: 320px;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+  <view wx:for="{{expressInfo.data}}" wx:key="this">
 
-  <view wx:for="{{expressInfo.data}}">
     <ul>
       <li>【{{item.time}}】</li>
       <li>---</li>

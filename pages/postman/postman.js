@@ -43,13 +43,14 @@ Page({
         var Firm = data;
         // 调用查询快递信息的方法
         app.getExpressInfo(Firm, Num, function(data) {
+          //  debugger;
           // console.log(data);
           if(data==0){
             this2.setData({
-              msg: "抱歉，你的单号暂无物流记录！！",
+              msg: "单号不存在或者已经过期",
               expressInfo: null
             })
-          }if(data==1){
+          }else{
           this2.setData({
             msg: "",
             expressInfo: data
