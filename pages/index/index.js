@@ -31,10 +31,6 @@ Page({
       wx.navigateTo({
         url: '../../pages/weather/weather'
       })
-    } else if (btnValue == "making") {
-      wx.navigateTo({
-        url: '../../pages/index/index'
-      })
     } 
   }
 })

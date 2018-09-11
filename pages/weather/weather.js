@@ -26,7 +26,8 @@ Page({
   data: {
     nowTemp: '20°C',
     nowWeather: '晴天',
-    nowWeatherBackground: ""
+    nowWeatherBackground: "",
+    hourlyWeather: []
   },
 
   /**
@@ -46,26 +47,47 @@ Page({
 
       success: res => {
         console.log(res.data);
-        let result = res.data.result
-        let temp = result.now.temp
-        let weather = result.now.weather
-        console.log(temp, weather);
-        this.setData({
-          nowTemp: temp + "℃",
-          nowWeather: weatherMap[weather],
-          nowWeatherBackground: "/images/images-weather/" + weather + "-bgpng"
-        })
-        wx.setNavigationBarColor({
-          frontColor: '#000000',
-          backgroundColor: weatherColorMap[weather],
-        })
+        let result = res.data.result;
+        this.setNow(result);
+        this.setHourlyWeather(result);
+
       },
       complete: () => {
         callback && callback();
-      }
+      },
+    
     })
   },
-
+  setNow(result) {
+    let temp = result.now.temp
+    let weather = result.now.weather
+    console.log(temp, weather);
+    this.setData({
+      nowTemp: temp + "℃",
+      nowWeather: weatherMap[weather],
+      nowWeatherBackground: "/images/images-weather/" + weather + "-bg.png"
+    })
+    wx.setNavigationBarColor({
+      frontColor: '#000000',
+      backgroundColor: weatherColorMap[weather],
+    })
+  },
+  setHourlyWeather(result) {
+    let nowHour = new Date().getHours();
+    let hourlyWeather = [];
+    let forecast = result.forecast;
+    for (let i = 0; i < 8; i += 1) {
+      hourlyWeather.push({
+        time: (i * 3 + nowHour) % 24 + "时",
+        iconPath: "/images/images-weather/" + forecast[i].weather + "-icon.png",
+        temp: forecast[i].temp + '°'
+      })
+    }
+    hourlyWeather[0].time = "现在";
+    this.setData({
+      hourlyWeather
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -98,7 +120,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function() {
-    his.getNow(() => {
+    this.getNew(() => {
       wx.stopPullDownRefresh()
     })
   },
